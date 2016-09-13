@@ -1,4 +1,4 @@
-FROM ankul/u14pls:prod
+FROM ankul/u14pls:tip
 
 ADD . /u14clopls
 
