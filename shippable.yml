@@ -23,3 +23,5 @@ build:
 
 integrations:
   hub:
+  - integrationName: "dockerhub"		
+    type: "docker"
