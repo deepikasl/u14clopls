@@ -6,11 +6,11 @@ lein:
 build:
   pre_ci:
     # Always pull the latest base image to avoid any cached images on the host
-    - docker pull drydock/u14pls:prod
-    - docker build --rm -t drydock/u14clopls:tip .
+    - docker pull ankul/u14pls:prod
+    - docker build --rm -t ankul/u14clopls:tip .
 
   pre_ci_boot:
-    image_name: drydock/u14clopls
+    image_name: ankul/u14clopls
     image_tag: tip
     pull: false
 
@@ -19,9 +19,7 @@ build:
     - lein version
 
   on_success:
-    - if [ "$IS_PULL_REQUEST" != true ]; then docker push drydock/u14clopls:tip; fi
+    - if [ "$IS_PULL_REQUEST" != true ]; then docker push ankul/u14clopls:tip; fi
 
 integrations:
   hub:
-    - integrationName: "dockerhub"
-      type: "docker"
