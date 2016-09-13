@@ -6,7 +6,7 @@ lein:
 build:
   pre_ci:
     # Always pull the latest base image to avoid any cached images on the host
-    - docker pull ankul/u14pls:prod
+    - docker pull ankul/u14pls:tip
     - docker build --rm -t ankul/u14clopls:tip .
 
   pre_ci_boot:
